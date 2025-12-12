@@ -43,3 +43,5 @@ tmp/
 temp/
 *.tmp
 data/
+data.zip
+outputs.zip
