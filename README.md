@@ -285,6 +285,14 @@ Additional guides in `docs/`:
 - `SWEBENCH_SETUP.md` - SWE-bench environment
 - `EXECUTIVE_SUMMARY.md` - Project overview
 
+### Project Reports
+
+This project was developed as part of Stanford CS329A (Self-Improving AI Agents). The `docs/` folder contains the following reports and materials:
+- `CS329A_final_project_proposal.pdf` - Initial project proposal outlining objectives and methodology
+- `CS329A_final_project_midterm_report.pdf` - Midterm progress report with preliminary results
+- `CS329A_final_project_final_report.pdf` - Final report with complete implementation details and evaluation
+- `CS329APoster.pdf` - Project poster summarizing key contributions and results
+
 ## Citation
 
 ```bibtex
