@@ -1,0 +1,70 @@
+# ReasoningBank Configuration - Using Gemini 2.5 Pro
+# This config uses Gemini 2.5 Pro for highest quality
+
+# Experiment settings
+experiment:
+  name: "table1_reproduction_gemini25pro"
+  seed: 42
+  alternate_seed: 1337
+  
+# LLM backbone configuration - Using Gemini 2.5 Pro
+llm:
+  provider: "google"
+  model: "gemini-2.5-pro"  # Highest quality, more expensive than Flash
+  agent_temperature: 0.7
+  agent_max_tokens: 2048
+  judge_temperature: 0.0
+  judge_max_tokens: 10
+  extractor_temperature: 1.0
+  extractor_max_tokens: 2048
+
+# Embedding configuration
+embedding:
+  provider: "google"  # Use Google Gemini embeddings
+  model: "models/embedding-001"
+  dimension: 768
+  # Alternative: Use sentence-transformers (local, no API key needed)
+  # provider: "sentence_transformers"
+  # model: "sentence-transformers/all-MiniLM-L6-v2"
+  # dimension: 384
+  # Alternative: Use OpenAI if you have API key
+  # provider: "openai"
+  # model: "text-embedding-3-large"
+  # dimension: 3072
+  
+# Memory/ReasoningBank configuration
+memory:
+  retrieve_k: 1
+  max_items_per_trajectory: 3
+  dedup_threshold: 0.9
+  bank_path: "memory_bank"
+  
+# Agent configuration
+agent:
+  max_steps: 30  # Paper specification (Section 4.1, Appendix B.1)
+  timeout_seconds: 900
+  use_real_browser: true  # Use real BrowserGym (requires Docker)
+  
+# WebArena configuration
+webarena:
+  subsets:
+    - shopping
+    - admin
+    - gitlab
+    - reddit
+    - multi
+  data_path: "data/webarena"
+  
+# Evaluation settings
+evaluation:
+  checkpoint_interval: 100
+  batch_size: 1
+  max_retries: 3
+  
+# Paths
+paths:
+  results_dir: "results"
+  logs_dir: "logs"
+  trajectories_dir: "trajectories"
+  bank_dir: "memory_bank"
+  reports_dir: "reports"

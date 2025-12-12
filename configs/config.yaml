@@ -1,0 +1,54 @@
+agent:
+  max_steps: 30
+  timeout_seconds: 900
+  use_real_browser: true
+embedding:
+  dimension: 768
+  # model: sentence-transformers/all-mpnet-base-v2  # Local, free, 768-dim embeddings
+  model: togethercomputer/m2-bert-80M-32k-retrieval
+  # model: google-embedding-001
+  # provider: google
+  provider: together
+  # No rate_limit_delay needed - runs locally!
+  # provider: google
+evaluation:
+  batch_size: 1
+  checkpoint_interval: 100
+  max_retries: 3
+experiment:
+  alternate_seed: 1337
+  name: table1_reproduction_together
+  seed: 42
+llm:
+  agent_max_tokens: 2048
+  agent_temperature: 0.7
+  extractor_max_tokens: 2048
+  extractor_temperature: 1.0
+  judge_max_tokens: 10
+  judge_temperature: 0.0
+  # model: Qwen/Qwen2.5-72B-Instruct-Turbo  # Fast, high quality, affordable
+  # model: gemini-2.5-pro
+  model: Qwen/Qwen2.5-7B-Instruct-Turbo  # Cheaper, faster alternative
+  # model: meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo  # Another option
+  provider: together
+  # provider: google
+  rate_limit_delay: 0.1  # TogetherAI has high rate limits
+memory:
+  bank_path: memory_bank_together
+  dedup_threshold: 0.9
+  max_items_per_trajectory: 3
+  retrieve_k: 1  # Paper Appendix A.2: "default k = 1; ablation study in §5.2"
+paths:
+  bank_dir: memory_bank_together
+  logs_dir: logs_together
+  reports_dir: reports_together
+  results_dir: results_together
+  trajectories_dir: trajectories_together
+webarena:
+  data_path: data/webarena
+  subsets:
+  - shopping
+  - admin
+  - gitlab
+  - reddit
+  - multi

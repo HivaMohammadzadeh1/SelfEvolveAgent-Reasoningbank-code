@@ -1,0 +1,27 @@
+# SWE-bench specific requirements for ReasoningBank
+# Install with: pip install -r requirements.swebench.txt
+
+# Core dependencies (if not already installed)
+datasets>=2.14.0  # For loading SWE-Bench-Verified from HuggingFace
+pandas>=2.0.0     # For results aggregation
+loguru>=0.7.0     # Logging
+pydantic>=2.0.0   # Data models
+python-dotenv>=1.0.0  # Environment variables
+pyyaml>=6.0       # Config files
+tqdm>=4.65.0      # Progress bars
+
+# LLM providers
+google-generativeai>=0.3.0  # For Gemini models
+openai>=1.0.0               # For GPT models (optional)
+anthropic>=0.18.0           # For Claude models (optional)
+together>=1.0.0             # For TogetherAI models and embeddings
+
+# Embeddings (local, free alternative)
+sentence-transformers>=2.2.0  # Local embeddings (no API costs)
+
+# Git operations
+GitPython>=3.1.0  # Git repository management (optional, uses subprocess by default)
+
+# Optional: Official SWE-bench harness
+# Uncomment to use official evaluation
+# swebench>=1.0.0

@@ -1,0 +1,41 @@
+agent:
+  max_steps: 30
+  timeout_seconds: 900
+embedding:
+  dimension: 1536
+  model: togethercomputer/m2-bert-80M-32k-retrieval
+  provider: together
+  # No rate_limit_delay needed - runs locally!
+evaluation:
+  batch_size: 1
+  checkpoint_interval: 10
+  max_retries: 3
+experiment:
+  alternate_seed: 1337
+  name: swebench_reasoningbank
+  seed: 42
+llm:
+  agent_max_tokens: 4096
+  agent_temperature: 0.7
+  extractor_max_tokens: 2048
+  extractor_temperature: 1.0
+  judge_max_tokens: 10
+  judge_temperature: 0.0
+  model: Qwen/Qwen2.5-72B-Instruct-Turbo  # Fast, high quality, affordable
+  provider: together
+  rate_limit_delay: 0.1  # TogetherAI has high rate limits
+memory:
+  dedup_threshold: 0.9
+  max_items_per_trajectory: 3
+  retrieve_k: 3
+paths:
+  bank_dir: memory_bank/swebench
+  logs_dir: logs/swebench
+  reports_dir: reports/swebench
+  results_dir: results/swebench
+  trajectories_dir: trajectories/swebench
+swebench:
+  cache_dir: .cache/swebench
+  dataset: princeton-nlp/SWE-bench_Verified
+  split: test
+  use_official_harness: false
