@@ -302,6 +302,8 @@ Provided for research and educational purposes.
 
 ## Acknowledgments
 
-- ReasoningBank paper: arXiv:2509.25140
+- ReasoningBank paper: [arXiv:2509.25140](https://arxiv.org/pdf/2509.25140)
 - WebArena: [webarena.dev](https://webarena.dev)
-- BrowserGym framework
+- BrowserGym framework: [BrowserGym](https://github.com/ServiceNow/BrowserGym)
+- SWEBench: [SWE-benc](https://github.com/SWE-bench/SWE-bench)
+- Stanford CS329A: Self Improving AI Agents [CS329A](https://cs329a.stanford.edu/)
