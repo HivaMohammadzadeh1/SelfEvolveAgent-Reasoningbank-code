@@ -17,6 +17,9 @@ This repository includes:
 - Strategy extraction pipeline
 - Full evaluation harness for WebArena, SWE-bench, and Mind2Web
 
+his project was developed as part of Stanford CS329A (Self-Improving AI Agents). The `docs/` folder contains the final reports and materials:
+- `CS329A_final_project_final_report.pdf` - Final report with complete implementation details and evaluation
+
 ## Installation
 
 ```bash
