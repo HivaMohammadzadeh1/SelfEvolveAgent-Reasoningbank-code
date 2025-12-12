@@ -147,7 +147,7 @@ Memory item structure:
   "content": ["Step 1", "Step 2"],
   "rationale": "Why this works",
   "provenance": {"task_id": "...", "success": true},
-  "embedding": [...]
+  "embedding": ["..."]
 }
 ```
 
